@@ -24,10 +24,11 @@
                   Imagem Saída</a></li>
             </ul>
           </li>
+          <!-- Operações do primeiro bimestre -->
           <li class="nav-item dropdown" style="margin-left: 15px; margin-right: 15px;">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
-              Operações - Semestre 1
+              Operações - Bimestre 1
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
               <li>
@@ -57,38 +58,27 @@
                   href="#">Laplaciano - Sharpenning</a></li>
               <li><a class="dropdown-item" id="btn-laplace2" class="btn btn-secondary" href="#" type="button"
                   href="#">Laplaciano - Filtro pedido</a></li>
-              <li><a class="dropdown-item" id="btn-sobel" class="btn btn-secondary" href="#" type="button">Sobel</a></li>
               <hr/>
+              <li><a class="dropdown-item" id="btn-sobel" class="btn btn-secondary" href="#" type="button">Sobel</a></li>
               <li><a class="dropdown-item" id="btn-limiar-modal" class="btn btn-secondary" href="#" type="button" data-bs-toggle="modal" data-bs-target="#threshold-modal">Limiarização</a></li>
+              <li><a class="dropdown-item" id="btn-gamma-modal" class="btn btn-secondary" href="#" type="button" data-bs-toggle="modal" data-bs-target="#gamma-modal">Compressão Gama</a></li>
             </ul>
           </li>
+          <!-- Operações do primeiro bimestre -->
+          <!-- Operações do segundo bimestre -->
           <li class="nav-item dropdown" style="margin-left: 15px; margin-right: 15px;">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
-              Operações - Semestre 2
+              Operações - Bimestre 2
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
               <li><a class="dropdown-item" id="btn-invert-colors" class="btn btn-secondary" href="#" type="button">Material
                   não dado ainda...</a></li>
             </ul>
           </li>
+          <!-- Operações do segundo bimestre -->
         </ul>
       </div>
-
-      <!--div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        
-        <a class="dropdown-item" id="btn-invert-colors" class="btn btn-secondary" onclick="invertColors()"
-          href="#">Inverter Cores</a>
-        <a class="dropdown-item" id="btn-convert-grey" class="btn btn-secondary" onclick="convertGrey()"
-          href="#">Converter para Cinza</a>
-        <a class="dropdown-item" id="btn-get-rgb-channel" class="btn btn-secondary" onclick="makeRGBChannel()"
-          href="#">Obter RGB</a>
-        <a class="dropdown-item" id="btn-filter-average" class="btn btn-secondary" onclick="filterByAverage()"
-          href="#">Filtro da Média</a>
-        <a class="dropdown-item" id="btn-filter-median" class="btn btn-secondary" onclick=filterByMedian()
-          href="#">Filtro da Mediana</a>
-        <a class="dropdown-item" id="btn-sobel" class="btn btn-secondary" href="#">Sobel</a>
-      </div !-->
     </nav>
     <div id="main">
       <!-- Modal para conversão de cores -->
@@ -175,7 +165,7 @@
                 <div class="row" style="margin: 15px;">
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"
-                      style="padding-left: 20px; padding-right: 20px;">R</span>
+                      style="padding-left: 20px; padding-right: 20px;">T</span>
                     <input id="threshold-value" type="text" class="form-control" placeholder="Digite o T" aria-label="threshold"
                       aria-describedby="basic-addon1">
                   </div>
@@ -184,42 +174,37 @@
               <p id="threshold-result" class="text-center"></p>
             </div>
             <div class="modal-footer">
-              <button id="btn-limiar" type="button" class="btn btn-info" style="max-width: fit-content;">Realizar operação</button>
+              <button id="btn-limiar" type="button" class="btn btn-info" style="max-width: fit-content;">Executar</button>
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
             </div>
           </div>
         </div>
       </div>
       <!-- modal para compressão de escala dinâmica -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="gamma-modal" tabindex="-1" aria-labelledby="gamma-modal" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title text-center" id="exampleModalLabel">Limiarização</h5>
+              <h5 class="modal-title text-center" id="gamaModalLabel">Compressão Gama</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <div class="container">
-                <p class="text-center">Digite o threshold (T)</p>
+                <p class="text-center">Escolha o gamma</p>
                 <div class="row" style="margin: 15px;">
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"
-                      style="padding-left: 20px; padding-right: 20px;">R</span>
-                    <input id="red" type="text" class="form-control" placeholder="red" aria-label="red"
+                      style="padding-left: 20px; padding-right: 20px;">Gama</span>
+                    <input id="gamma-value" type="text" class="form-control" placeholder="Digite o gamma" aria-label="gamma"
                       aria-describedby="basic-addon1">
                   </div>
                 </div>
+                <hr />
               </div>
-              <hr />
-              <p id="result" class="text-center"></p>
+              <p id="gamma-result" class="text-center"></p>
             </div>
             <div class="modal-footer">
-              <div class="mb-3">
-                <button id="rbg-hsl" type="button" class="btn btn-info" style="max-width: 125px; margin: 20px;">RBG
-                  para HSL</button>
-                <button id="hsl-rgb" type="button" class="btn btn-info" style="max-width: 125px; margin: 20px;">HSL
-                  para RGB</button>
-              </div>
+              <button id="btn-gamma" type="button" class="btn btn-info"style="max-width: fit-content;">Excecutar</button>
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
             </div>
           </div>
@@ -305,12 +290,13 @@
     <script src="./src/part-1/invertColor.js"></script>
     <script src="./src/part-1/convertToGrey.js"></script>
     <script src="./src/part-1/histogram.js"></script>
-    <script src="./src/part-1/nearest-neighbour.js"></script>
+    <script src="./src/part-1/nearestNeighbour.js"></script>
     <script src="./src/part-1/filters.js"></script>
     <script src="./src/part-1/binarization.js"></script>
     <script src="./src/part-1/laplace.js"></script>
     <script src="./src/part-1/sobel.js"></script>
     <script src="./src/part-1/thresholding.js"></script>
+    <script src="./src/part-1/gamaCompression.js"></script>
     <!-- Implementações -->
   </body>
 </html>
