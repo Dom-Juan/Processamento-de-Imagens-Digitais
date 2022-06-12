@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trabalho de PDI</title>
-    <link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="./css/index.css" rel="stylesheet">
+    <link href="./bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="./css/index.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Trabalho-PDI</a>
+    <nav id="topnav" class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Trabalho-PDI Juan Cardoso da Silva - 171257138</a>
       <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item dropdown" style="margin-left: 15px; margin-right: 15px;">
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
+              data-bs-toggle="dropdown" aria-expanded="false"  style="margin-left: 15px; margin-right: 15px;">
               Menu
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
@@ -25,9 +25,9 @@
             </ul>
           </li>
           <!-- Operações do primeiro bimestre -->
-          <li class="nav-item dropdown" style="margin-left: 15px; margin-right: 15px;">
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
+              data-bs-toggle="dropdown" aria-expanded="false" style="margin-left: 15px; margin-right: 15px;">
               Operações - Bimestre 1
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
@@ -66,14 +66,16 @@
           </li>
           <!-- Operações do primeiro bimestre -->
           <!-- Operações do segundo bimestre -->
-          <li class="nav-item dropdown" style="margin-left: 15px; margin-right: 15px;">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
+          <li class="nav-item dropdown">
+            <!-- a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false" style="margin-left: 15px; margin-right: 15px;">
               Operações - Bimestre 2
-            </a>
+            </a -->
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a class="dropdown-item" id="btn-transform-cos" class="btn btn-secondary" href="#" type="button">Transformada com Cosseno</a></li>
               <li><a class="dropdown-item" id="btn-invert-colors" class="btn btn-secondary" href="#" type="button">Material
                   não dado ainda...</a></li>
+              <hr/>
             </ul>
           </li>
           <!-- Operações do segundo bimestre -->
@@ -198,6 +200,12 @@
                     <input id="gamma-value" type="text" class="form-control" placeholder="Digite o gamma" aria-label="gamma"
                       aria-describedby="basic-addon1">
                   </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                      style="padding-left: 20px; padding-right: 20px;">Valor C</span>
+                    <input id="c-value" type="text" class="form-control" placeholder="Digite o c" aria-label="c"
+                      aria-describedby="basic-addon1">
+                  </div>
                 </div>
                 <hr />
               </div>
@@ -218,8 +226,10 @@
               style=" width: fit-content; margin-left: 15px" onchange="readImage(this)">
           </div>
           <div class="mb-3">
-            <button id="btn-invert" class="btn btn-secondary" onclick="copyToEntry()" href="#"
+            <button id="btn-copy-to-entry" class="btn btn-secondary" onclick="copyToEntry()" href="#"
               style="width: 250px; margin-left: 15px">Copiar para entrada</button>
+            <!--button id="btn-zoom" class="btn btn-dark" href="#"
+              style="width: 250px; margin-left: 15px">Zoom</button -->
           </div>
           <div class="d-flex justify-content-center">
             <div class="row" style="margin: 25px;">
@@ -231,6 +241,7 @@
                 </div>
               </div>
             </div>
+
             <div class="row" style="margin: 25px;">
               <p class="text-center">Cor do mouse passando em cima</p>
               <p id="hover-rgba" class="text-center">RGBA</p>
@@ -260,6 +271,23 @@
                   <canvas id="canvas-pdi2" class="" width="640" height="480"
                     style="border-style: solid; border-width: 2px; flex-direction: row; justify-content: center;"></canvas>
                 </div>
+                <div class="row" style="margin-left: 25px; margin-right:25px">
+                  <p class="text-center">Magnitude e coordenadas</p>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"
+                          >X</span>
+                    <input id="click-cord-x" type="text" type="text" class="form-control" aria-label="coordenadas"
+                    aria-describedby="basic-addon1">
+                    <span class="input-group-text" id="basic-addon1"
+                          >Y</span>
+                    <input id="click-cord-y" type="text" type="text" class="form-control" aria-label="coordenadas"
+                    aria-describedby="basic-addon1">
+                    <span class="input-group-text" id="basic-addon1"
+                          >Magnitude</span>
+                    <input id="click-mag"  type="text" type="text" class="form-control" aria-label="magnitude"
+                    aria-describedby="basic-addon1">
+                  </div>
+                </div>
               </li>
               <li class="list-group-item" style="margin-top: 10px; margin-bottom: 10px;">
                 <p class="text-center">Saída 2</p>
@@ -284,7 +312,7 @@
     <script src="./bootstrap/js/bootstrap.js"></script>
     <script src="./jquery/jquery.js"></script>
     <!-- Libs de interface -->
-    <!-- Implementações -->
+    <!-- Implementações parte 1 -->
     <script src="./src/main.js"></script>
     <script src="./src/part-1/convertColors.js"></script>
     <script src="./src/part-1/invertColor.js"></script>
@@ -297,6 +325,7 @@
     <script src="./src/part-1/sobel.js"></script>
     <script src="./src/part-1/thresholding.js"></script>
     <script src="./src/part-1/gamaCompression.js"></script>
-    <!-- Implementações -->
+    <!-- Implementações parte 1 -->
+    <script src="./src/part-2/transformCos.js"></script>
   </body>
 </html>

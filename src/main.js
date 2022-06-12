@@ -149,7 +149,7 @@ const addNoise = () => {
 
   let imgData = context1.getImageData(0, 0, canvas1.width, canvas1.height);
 
-  let noiseSize = Math.round(Math.random() * 10);
+  let noiseSize = Math.round(Math.random() * 100);
   console.log(imgData.width, imgData.height, noiseSize);
   let pixels = imgData.data;
 
