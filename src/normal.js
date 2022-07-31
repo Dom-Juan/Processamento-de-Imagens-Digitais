@@ -4,8 +4,8 @@ const normalize = (pixels) => {
   let min = Math.min(...pixels);
   
   for(let i = 0; i < pixels.length; i++) {
-    let px = ((pixels[i] - max)/(max - min));
-    normal.push(px, px, px, 255);
+    let px = ((pixels[i] - min)/(max - min))*255;
+    normal.push(px);
   }
 
   return normal;

@@ -34,6 +34,18 @@ const readImage = (input) => {
     imgSrc = window.URL.createObjectURL(input.files[0]);
   }
 
+  let canvas2 = document.getElementById("canvas-pdi2");
+  let canvas3 = document.getElementById("canvas-pdi3");
+  let canvas4 = document.getElementById("canvas-pdi4");
+  // pegando referencia do contexto de renderização dele.
+  let context2 = canvas2.getContext("2d");
+  let context3 = canvas3.getContext("2d");
+  let context4 = canvas4.getContext("2d");
+
+  context2.clearRect(0, 0, canvas2.width, canvas2.height);
+  context3.clearRect(0, 0, canvas3.width, canvas3.height);
+  context4.clearRect(0, 0, canvas4.width, canvas4.height);
+
   img.onload = function () {
     context1.drawImage(img, 0, 0);
     img.style.display = 'none';
