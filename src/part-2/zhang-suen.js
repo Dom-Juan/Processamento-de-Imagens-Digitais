@@ -76,12 +76,13 @@ $("#btn-zhang-suen").on("click", () => {
 
 $("#btn-zhang-suen-comp").on("click", () => {
   console.log("** Zhang Suen **");
+  $("#zhang-result").empty();
 
   let imgData = context1.getImageData(0, 0, imgWidth, imgHeight);
 
   zhangSuen(imgData);
   dilatation(imgData,  "canvas3");
   erosion(imgData,  "canvas4");
-
+  $("#zhang-result").append("Operação feita com sucesso!!");
   console.log("Sucesso!");
 });

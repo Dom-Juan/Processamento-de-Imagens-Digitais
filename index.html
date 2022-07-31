@@ -9,7 +9,7 @@
     <link href="./css/index.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Trabalho-PDI</a>
       <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
         <ul class="navbar-nav">
@@ -103,6 +103,10 @@
             </ul>
           </li>
           <!-- Operações do segundo bimestre -->
+          <li>
+            <a id="btn-copy-to-entry" class="btn btn-secondary" onclick="copyToEntry()" href="#"
+              style="width: 250px; margin-left: 15px">Copiar para entrada</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -301,7 +305,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title text-center" id="gamaModalLabel">Comparando Zhagn-suen com Erosão, Dilatação</h5>
+              <h5 class="modal-title text-center" id="gamaModalLabel">Comparando Zhang-suen com Erosão, Dilatação</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -322,15 +326,16 @@
       <div>
         <div class="row">
           <div class="mb-3">
+            </br>
+            </br>
+            </br>
+            <h4>Feito por:</h4>
+            <p>Juan Cardoso da Silva - 171257138</p>
+            <p>Paulo Henrique Silva Peres - 171253213</p>
+            <hr/>
             <label for="formFile" class="form-label" style="margin-left: 15px">Escolha um arquivo</label>
             <input class="form-control" type="file" name="file" id="canvas-file"
               style=" width: fit-content; margin-left: 15px" onchange="readImage(this)">
-          </div>
-          <div class="mb-3">
-            <button id="btn-copy-to-entry" class="btn btn-secondary" onclick="copyToEntry()" href="#"
-              style="width: 250px; margin-left: 15px">Copiar para entrada</button>
-            <!--button id="btn-zoom" class="btn btn-dark" href="#"
-              style="width: 250px; margin-left: 15px">Zoom</button -->
           </div>
           <div class="d-flex justify-content-center">
             <div class="row" style="margin: 25px;">
